@@ -18,14 +18,14 @@ for page, rank in sorted(pagerank.items(), key=lambda x: x[1], reverse=True)[:10
     print(rank)
     print("------------------")
 
-# Draw the network with improved visualization
+# Network visualization
 plt.figure(figsize=(15, 10))
 pos = nx.spring_layout(G, k=0.15)
 nx.draw(G, pos, with_labels=False, node_size=500, node_color="lightblue", edge_color="gray", font_size=10, font_weight='bold')
 
-# Label only the central node
 central_node = max(pagerank, key=pagerank.get)
 nx.draw_networkx_labels(G, pos, labels={central_node: central_node}, font_size=12, font_weight='bold', font_color='black')
 
 plt.title("Wikipedia Hyperlink Network Structure", fontsize=14, fontweight='bold')
+plt.savefig("static_hyperlink.png") 
 plt.show()
