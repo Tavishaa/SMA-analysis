@@ -37,7 +37,6 @@ print("\nCategory Distribution:")
 print(df['category'].value_counts())
 
 # --- Visualization Starts Here ---
-
 # 1️⃣ Bar Chart: Post Categories Distribution
 plt.figure(figsize=(10,6))
 df['category'].value_counts().plot(kind='bar', color='skyblue', edgecolor='black')
